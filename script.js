@@ -45,12 +45,12 @@ const switchPlayer = function () {
 //roll dice
 btnRoll.addEventListener('click', function () {
   if (playing) {
-    const randomDiceNum = Math.trunc(Math.random() * 6) + 1;
+    const dicePoints = Math.trunc(Math.random() * 6) + 1;
     diceElem.classList.remove('hidden');
-    diceElem.src = `dice-${randomDiceNum}.png`;
+    diceElem.src = `dice-${dicePoints}.png`;
 
-    if (randomDiceNum !== 1) {
-      currentScore += randomDiceNum;
+    if (dicePoints !== 1) {
+      currentScore += dicePoints;
       document.getElementById(`current--${activePlayer}`).textContent =
         currentScore;
     } else {
